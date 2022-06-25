@@ -1,0 +1,131 @@
+﻿@page
+@model AADMS.Pages.EditDataModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form method="post">
+        <table>
+
+            <tr>
+                <th>AADHAR Number</th>
+                <td>@Html.DisplayTextFor(model => model.user.UID)</td>
+                <input type="hidden" asp-for="user.UID" />
+            </tr>
+
+            <tr>
+                <th>First Name</th>
+                <td> <input asp-for="user.FIRSTNAME" /> </td>
+            </tr>
+
+            <tr>
+                <th>Last Name</th>
+                <td> <input asp-for="user.LASTNAME" /> </td>
+            </tr>
+
+            <tr>
+                <th>DOB</th>
+                <td> <input asp-for="user.DOB" /> </td>
+            </tr>
+
+            <tr>
+                <th>Phone</th>
+                <td> <input asp-for="user.PHONE" /> </td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td> <input asp-for="user.EMAIL" /> </td>
+            </tr>
+
+            <tr>
+                <th>Occupation</th>
+                <td> <input asp-for="user.OCCUPATION" /> </td>
+            </tr>
+
+            <tr>
+                <th>Gender</th>
+                <td>
+                    <select asp-for="user.GENDER" class="form-control" style="background-color:white">
+                        <option value="--Select--"> </option>
+                        <option value="Male">Male </option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <th>Martial Status</th>
+                <td> <input asp-for="user.MARTIALSTAT" /> </td>
+            </tr>
+
+            <tr>
+                <th>ADD L1</th>
+                <td> <input asp-for="user.ADD_LINE1" /> </td>
+            </tr>
+
+            <tr>
+                <th>ADD L2</th>
+                <td> <input asp-for="user.ADD_LINE2" /> </td>
+            </tr>
+
+            <tr>
+                <th>POSTALCODE</th>
+                <td> <input asp-for="user.POSTALCODE" /> </td>
+            </tr>
+
+            <tr>
+                <th>City</th>
+                <td> <input asp-for="user.CITY" /> </td>
+            </tr>
+
+            <tr>
+                <th>State</th>
+                <td> <input asp-for="user.STATE" /> </td>
+            </tr>
+
+            <tr>
+                <th>Country</th>
+                <td>@Html.DisplayFor(model => model.user.COUNTRY)</td>
+                <input type="hidden" asp-for="user.COUNTRY" />
+            </tr>
+
+            <tr>
+                <th>Gender</th>
+                <td> <input asp-for="user.GENDER" /> </td>
+            </tr>
+
+            <tr>
+                <th>C/O FNAME</th>
+                <td> <input asp-for="user.CO_FNAME" /> </td>
+            </tr>
+
+            <tr>
+                <th>C/O LNAME</th>
+                <td> <input asp-for="user.CO_LNAME" /> </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Update Data" />
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+
+
+</body>
+</html>
+

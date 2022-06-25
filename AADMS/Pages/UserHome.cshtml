@@ -1,0 +1,30 @@
+﻿@page
+@model AADMS.Pages.UserHomeModel
+@{
+    Layout = "~/Pages/Shared/_UserLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserHome</title>
+</head>
+<body>
+
+    <div>
+        <br />
+        <br />
+        <h1>USER HOME</h1>
+        <h1>WELCOME @Model.AID</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.FIRSTNAME)</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.LASTNAME)</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.ADD_LINE1)</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.STATE)</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.GENDER)</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.EMAIL)</h1>
+        <h1>@Html.DisplayTextFor(model => model.user.PHONE)</h1>
+    </div>
+</body>
+</html>

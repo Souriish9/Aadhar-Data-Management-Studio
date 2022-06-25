@@ -1,0 +1,55 @@
+﻿@page
+@model AADMS.Pages.ViewAllUsersModel
+@{
+    ViewData["Title"] = "ViewAllUsers";
+    Layout =null;
+}
+
+<body style="background-color:lightblue;">
+    <table border="1">
+        <thead>
+            <tr>
+                <th scope="col">AADHAR</th>
+                <th scope="col">FIRST NAME</th>
+                <th scope="col">LAST NAME</th>
+                <th scope="col">DOB</th>
+                <th scope="col">PHONE</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">OCCUPATION</th>
+                <th scope="col">GENDER</th>
+                <th scope="col">MARTIAL STATUS</th>
+                <th scope="col">ADDRESS L1</th>
+                <th scope="col">ADDRESS L2</th>
+                <th scope="col">POSTAL CODE</th>
+                <th scope="col">CITY</th>
+                <th scope="col">STATE</th>
+                <th scope="col">COUNTRY</th>
+                <th scope="col">C/O</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.user)
+            {
+                <tr>
+                    <th scope="row">@item.UID</th>
+                    <td>@item.FIRSTNAME</td>
+                    <td>@item.LASTNAME</td>
+                    <td>@item.DOB</td>
+                    <td>@item.PHONE</td>
+                    <td>@item.EMAIL</td>
+                    <td>@item.OCCUPATION</td>
+                    <td>@item.GENDER</td>
+                    <td>@item.MARTIALSTAT</td>
+                    <td>@item.ADD_LINE1</td>
+                    <td>@item.ADD_LINE2</td>
+                    <td>@item.POSTALCODE</td>
+                    <td>@item.CITY</td>
+                    <td>@item.STATE</td>
+                    <td>@item.COUNTRY</td>
+                    <td>@item.CO_FNAME  @item.CO_LNAME</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
