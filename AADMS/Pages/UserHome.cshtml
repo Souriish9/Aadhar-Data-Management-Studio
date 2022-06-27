@@ -3,6 +3,9 @@
 @{
     Layout = "~/Pages/Shared/_UserLayout.cshtml";
 }
+@{ 
+    ViewData["Title"] = "UserHome";
+}
 
 <!DOCTYPE html>
 
@@ -25,6 +28,10 @@
         <h1>@Html.DisplayTextFor(model => model.user.GENDER)</h1>
         <h1>@Html.DisplayTextFor(model => model.user.EMAIL)</h1>
         <h1>@Html.DisplayTextFor(model => model.user.PHONE)</h1>
+    </div>
+
+    <div>
+        <img src="@Model.test" alt="QR" />
     </div>
 </body>
 </html>
