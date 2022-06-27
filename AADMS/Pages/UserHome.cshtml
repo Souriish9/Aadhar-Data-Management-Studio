@@ -20,18 +20,27 @@
         <br />
         <br />
         <h1>USER HOME</h1>
-        <h1>WELCOME @Model.AID</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.FIRSTNAME)</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.LASTNAME)</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.ADD_LINE1)</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.STATE)</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.GENDER)</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.EMAIL)</h1>
-        <h1>@Html.DisplayTextFor(model => model.user.PHONE)</h1>
+        <h3>WELCOME !</h3>
+        <br/>
+        <br />
+        <h3> NAME: @Html.DisplayTextFor(model => model.user.FIRSTNAME) @Html.DisplayTextFor(model => model.user.LASTNAME)</h3>
+        <h3>EMAIL: @Html.DisplayTextFor(model => model.user.EMAIL)</h3>
+        <h3>PHONE: @Html.DisplayTextFor(model => model.user.PHONE)</h3>
+        <h3>ADDRESS: @Html.DisplayTextFor(model => model.user.ADD_LINE1), @Html.DisplayTextFor(model => model.user.ADD_LINE2)</h3>
+        <h3>CITY: @Html.DisplayTextFor(model => model.user.CITY)</h3>
+        <h3> STATE: @Html.DisplayTextFor(model => model.user.STATE)</h3>
+        <h3>PINCODE: @Html.DisplayTextFor(model => model.user.POSTALCODE)</h3>
+        <h3> C/O: @Html.DisplayTextFor(model => model.user.CO_FNAME) @Html.DisplayTextFor(model => model.user.CO_LNAME)</h3>
+        <br />
+        <br/>
     </div>
 
-    <div>
-        <img src="@Model.test" alt="QR" />
+    <div style="position:absolute; left:600px; top:200px;">
+        <form method="post">
+            <button type="submit" class="btn btn-info">Generate QR Code</button>
+            <img src="@Model.test" />
+            <a asp-page="Home">Go Back</a>
+        </form>
     </div>
 </body>
 </html>

@@ -24,9 +24,20 @@ namespace AADMS.Pages
         public User user { get; set; }
 
         [BindProperty]
+        public User user1 { get; set; }
+
+        [BindProperty]
         public string test { get; set; }
 
         public void OnGet()
+        {
+            AID = HttpContext.Session.GetString("aadno");
+            user = CurdOpsUser.getDataByAID(AID);
+
+        }
+        
+
+        public void OnPost()
         {
             AID = HttpContext.Session.GetString("aadno");
             user = CurdOpsUser.getDataByAID(AID);
@@ -39,22 +50,6 @@ namespace AADMS.Pages
                 QRCode qRCode = new QRCode(qRCodeData);
 
                 using (Bitmap bitmap = qRCode.GetGraphic(5))
-                {
-                    bitmap.Save(ms, ImageFormat.Png);
-                    test = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
-                }
-            }
-        }
-
-        public void OnPost()
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
-                QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode("hello!", QRCodeGenerator.ECCLevel.Q);
-                QRCode qRCode = new QRCode(qRCodeData);
-
-                using (Bitmap bitmap = qRCode.GetGraphic(20))
                 {
                     bitmap.Save(ms, ImageFormat.Png);
                     test = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
